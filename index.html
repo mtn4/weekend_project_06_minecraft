@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 850px)"
+      href="./styles/mobile.css"
+    />
+    <title>Minecraft Web Game</title>
+  </head>
+  <body>
+    <div class="landing-page display-flex">
+      <img
+        class="landing-page__logo"
+        src="./assets/580b57fcd9996e24bc43c2fd.png"
+      />
+      <div class="landing-page__rules">
+        Design the world as you wish! <br />
+        Choose a tool from the following tools and use it to remove tiles from
+        the world: <br /><br />
+        <ul>
+          <li>
+            <img src="./assets/axe.png" alt="" /> for the following tiles:
+            <img src="./assets/leaves.png" alt="" />,
+            <img src="./assets/wood.jpg" alt="" />
+          </li>
+          <li>
+            <img src="./assets/pickaxe.png" alt="" /> for the following tiles:
+            <img src="./assets/cobblestone.jpg" alt="" />
+          </li>
+          <li>
+            <img src="./assets/shovel.png" alt="" /> for the following tiles:
+            <img src="./assets/dirt.jpg" alt="" />
+            <img src="./assets/mcdirt.jpg" alt="" />
+          </li>
+        </ul>
+        <br />
+        You can retrieve tiles from the inventory and place them back around the
+        world, in the open slots.
+      </div>
+      <button class="landing-page__btn"></button>
+    </div>
+    <div id="game-container" class="display-flex display-none">
+      <div id="game-board"></div>
+      <div class="tool-bar display-flex">
+        <div id="tool-bar__tools" class="display-flex"></div>
+        <button id="inventory" class="tool-bar-btn btn--inventory">
+          Inventory
+        </button>
+        <button class="tool-bar-btn">Theme</button>
+        <div id="themes-container" class="display-flex display-none">
+          <button data-theme="light" class="tool-bar-btn">Light</button>
+          <button data-theme="dark" class="tool-bar-btn">Dark</button>
+        </div>
+        <button class="tool-bar-btn">Reset</button>
+      </div>
+    </div>
+  </body>
+  <script src="./scripts/play.js" type="module"></script>
+</html>

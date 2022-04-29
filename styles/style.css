@@ -1,0 +1,203 @@
+@font-face {
+  font-family: "Minecraft";
+  src: url("../assets/Minecraft.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Minecraft";
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background: url("../assets/556712.jpg") no-repeat center center/cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.display-none {
+  display: none !important;
+}
+.display-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/** Landing Page **/
+
+.landing-page {
+  justify-content: space-around;
+  height: 100vh;
+  width: 100vw;
+}
+.landing-page__logo {
+  max-width: 100rem;
+  width: 90%;
+}
+.landing-page__btn {
+  height: 15rem;
+  width: 25rem;
+  border: none;
+  box-shadow: 0 2rem 3.5rem rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+.landing-page__btn::before {
+  content: "";
+  height: 200%;
+  width: 150%;
+  position: absolute;
+  background: conic-gradient(
+    #fd004c,
+    #fe9000,
+    #fff020,
+    #3edf4b,
+    #3363ff,
+    #b102b7,
+    #fd004c
+  );
+  left: -25%;
+  top: -50%;
+  animation: spin 1.5s infinite linear;
+}
+.landing-page__btn::after {
+  content: "Play Now!";
+  position: absolute;
+  background-color: #1c1b29;
+  height: 93%;
+  width: 93%;
+  top: 3.5%;
+  left: 3.5%;
+  border-radius: 2rem;
+  color: #ffffff;
+  font-size: 2.6rem;
+  letter-spacing: 0.6rem;
+  display: grid;
+  place-items: center;
+  transition: all 0.3s ease-in-out;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.landing-page__btn:hover::after {
+  background-color: powderblue;
+  font-size: 3.2rem;
+  color: black;
+}
+.landing-page__rules {
+  padding: 3rem;
+  width: 95%;
+  max-width: 80rem;
+  background-color: rgba(51, 99, 255, 0.6);
+  color: white;
+  box-shadow: 0 2rem 3.5rem rgba(0, 0, 0, 0.6);
+  font-size: 2.6rem;
+}
+.landing-page__rules > ul {
+  list-style: none;
+}
+li > img {
+  width: 5rem;
+}
+
+/**** Board Area ****/
+
+/** Game Area **/
+#game-container {
+  flex-direction: row;
+}
+#game-board {
+  margin: auto;
+  height: 100vmin;
+  width: 84vmin;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+}
+.game-board--dark {
+  background: rgba(0, 0, 0, 0.6);
+}
+.game-board--light {
+  background: skyblue;
+}
+.game-board--cloud {
+  background: white;
+}
+
+.game-board--dirt {
+  background: url("../assets/dirt.jpg") no-repeat center center/cover;
+}
+
+.game-board--grass {
+  background: url("../assets/mcdirt.jpg") no-repeat center center/cover;
+}
+
+.game-board--wood {
+  background: url("../assets/wood.jpg") no-repeat center center/cover;
+}
+
+.game-board--stone {
+  background: url("../assets/cobblestone.jpg") no-repeat center center/cover;
+}
+
+.game-board--leaves {
+  background: url("../assets/leaves.png") no-repeat center center/cover;
+}
+
+/** Tool Bar Area **/
+.tool-bar {
+  padding: 0 1rem;
+  height: 100vmin;
+}
+.tool-bar-btn {
+  margin: 20px 0;
+  background: rgba(0, 170, 170, 0.3);
+  box-shadow: 0 2rem 3.5rem rgba(0, 0, 0, 0.6);
+  color: white;
+  border: 0.5rem solid white;
+  cursor: pointer;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 1.5rem;
+  font-size: 2.4rem;
+  transition: all 0.3s ease-in-out;
+}
+.tool-bar-btn:hover {
+  background: #00aaaa;
+}
+.tool-bar-btn img {
+  width: 4rem;
+}
+.btn--inventory {
+  font-size: 1.8rem;
+}
+
+.btn--flash-blue {
+  border-color: blue;
+}
+.btn--flash-red {
+  border-color: red;
+}
+
+.btn--flash-green {
+  animation: flashGreen 0.5s linear 3;
+}
+@keyframes flashGreen {
+  50% {
+    background: green;
+  }
+}
+
+.btn--active {
+  border: 0.5rem solid blue;
+  background: #00aaaa;
+}
